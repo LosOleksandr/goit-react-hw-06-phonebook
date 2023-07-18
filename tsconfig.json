@@ -6,7 +6,8 @@
     "baseUrl": "src",
     "paths": {
       "@components/*": ["./components/*"],
-      "@app/*": ["./app/*"]
+      "@app/*": ["./app/*"],
+      "@interface/*": ["./interface/*"]
     },
     "allowJs": false,
     "skipLibCheck": true,
@@ -21,6 +22,6 @@
     "jsx": "react-jsx",
     "types": ["testing-library__jest-dom"]
   },
-  "include": ["src"],
+  "include": ["src", "./node_modules/redux-persist/types"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

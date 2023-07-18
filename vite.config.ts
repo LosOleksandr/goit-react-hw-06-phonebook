@@ -12,6 +12,7 @@ export default defineConfig({
     alias: {
       "@components": "/src/components",
       "@app": "/src/app",
+      "@interface": "/src/interface",
     },
   },
   build: {

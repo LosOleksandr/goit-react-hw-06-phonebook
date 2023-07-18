@@ -2,6 +2,8 @@ import { ErrorMessage } from "@hookform/error-message"
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import validationSchema from "./validationSchema"
+import { useAppDispatch } from "@app/hooks"
+import { addContact } from "@app/ContactsSlice"
 
 type PhonebookFormFields = {
   name: string
@@ -9,6 +11,8 @@ type PhonebookFormFields = {
 }
 
 const PhonebookForm = () => {
+  const dispatch = useAppDispatch()
+
   const {
     register,
     handleSubmit,
@@ -17,9 +21,10 @@ const PhonebookForm = () => {
   } = useForm<PhonebookFormFields>({ resolver: yupResolver(validationSchema) })
 
   const onSubmit = (data: PhonebookFormFields) => {
-    console.log(data)
+    dispatch(addContact(data))
     reset()
   }
+  
   return (
     <form action="" autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
       <label>
