@@ -6,6 +6,13 @@ export default defineConfig({
   plugins: [react()],
   server: {
     open: true,
+    port: 9090,
+  },
+  resolve: {
+    alias: {
+      "@components": "/src/components",
+      "@app": "/src/app",
+    },
   },
   build: {
     outDir: "build",

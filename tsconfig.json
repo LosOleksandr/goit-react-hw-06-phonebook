@@ -3,6 +3,11 @@
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "baseUrl": "src",
+    "paths": {
+      "@components/*": ["./components/*"],
+      "@app/*": ["./app/*"]
+    },
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": false,
