@@ -5,16 +5,16 @@ import { Contact } from "@interface/contacts"
 
 const ContactsList = () => {
   const dispatch = useAppDispatch()
-  const contacts = useAppSelector(selectContacts)
+  const { list } = useAppSelector(selectContacts)
   const filter = useAppSelector(selectFilter)
 
-  const getVisibleContacts = (contacts: Contact[], filter: string) => {
-    return contacts.filter(({ name }) =>
+  const getVisibleContacts = (list: Contact[], filter: string) => {
+    return list.filter(({ name }) =>
       name.toLowerCase().trim().includes(filter.toLowerCase().trim()),
     )
-  }
+  } 
 
-  const visibleContacts = getVisibleContacts(contacts, filter)
+  const visibleContacts = getVisibleContacts(list, filter)
 
   return (
     <ul>

@@ -4,7 +4,7 @@ import PhonebookForm from "@components/PhonebookForm/PhonebookForm"
 
 const App = () => {
   return (
-    <div className="text-red-500">
+    <div className="text-black">
       <PhonebookForm />
       <Filter />
       <ContactsList />
