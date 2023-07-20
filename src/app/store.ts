@@ -11,11 +11,13 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist"
+import { persistedThemeReducer } from "./ThemeSlice"
 
 export const store = configureStore({
   reducer: {
     contacts: persistedContactsReducer,
     filter: filterReducer,
+    theme: persistedThemeReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
