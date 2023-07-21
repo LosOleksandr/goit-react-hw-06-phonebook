@@ -3,6 +3,7 @@ import { selectTheme } from "@app/selectors"
 import ContactsList from "@components/ContactsList/ContactsList"
 import Filter from "@components/Filter/Filter"
 import PhonebookForm from "@components/PhonebookForm/PhonebookForm"
+import Section from "@components/Section/Section"
 import ThemeToggler from "@components/ThemeToggler/ThemeToggler"
 import { useEffect, useRef } from "react"
 
@@ -17,12 +18,18 @@ const App = () => {
   }, [theme])
 
   return (
-    <div className="text-black dark:text-blue-500">
-      <PhonebookForm />
-      <Filter />
-      <ContactsList />
+    <main>
       <ThemeToggler />
-    </div>
+      <Section>
+        <PhonebookForm />
+      </Section>
+      <Section title="Contacts List">
+        <div className="max-w-lg m-auto mt-8">
+          <Filter />
+          <ContactsList />
+        </div>
+      </Section>
+    </main>
   )
 }
 
